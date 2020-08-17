@@ -1,0 +1,13 @@
+app:
+  name: StudentInfoApp
+  version: 1.0.1 prefix mate
+
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_CONNECTION_ADDR:0.0.0.0}:3306/student_info?createDatabaseIfNotExist=true&useSSL=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&seroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=UTF-8
+    username: ${DB_CONNECTION_USERNAME:root}
+    password: ${DB_CONNECTION_PASSWORD:123}

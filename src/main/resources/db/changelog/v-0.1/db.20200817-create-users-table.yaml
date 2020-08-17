@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20200817
+      author: kmehdiza
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: user_pkey
+                  name: username
+                  type: varchar(50)
+              - column:
+                  name: first_name
+                  type: varchar(50)
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(50)
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: email
+                  type: varchar(50)
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: phone
+                  type: varchar(50)
+              - column:
+                  name: photo
+                  type: varchar(50)
+            tableName: users
