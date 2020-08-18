@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
       file: db/changelog/v-0.1/db.20200817-create-users-table.yaml
+  - include:
+      file: db/changelog/v-0.1/db.20200817-create-tag-table.yaml
