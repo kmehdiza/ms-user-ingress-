@@ -14,6 +14,11 @@ import java.util.Map;
 @ControllerAdvice
 public class ExceptionHandlerAdvice extends DefaultErrorAttributes {
 
+    @ExceptionHandler(value = NotFoundException.class)
+    public ResponseEntity<Map<String,Object>> handleNotFoundException(NotFoundException e, ServletWebRequest request){
+        return ofType(request,HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(value = InvalidStateException.class)
     public ResponseEntity<Map<String, Object>> handleInvalidStateException(InvalidStateException e, ServletWebRequest request){
         return ofType(request,HttpStatus.BAD_REQUEST);

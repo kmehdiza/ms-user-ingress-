@@ -22,4 +22,9 @@ public class UserController {
     public void createUser(@Validated @RequestBody User user){
         userService.createUser(user);
     }
+
+    @PostMapping("/update")
+    public void updateUser(@RequestBody User user){
+        userService.userUpdated(user);
+    }
 }
