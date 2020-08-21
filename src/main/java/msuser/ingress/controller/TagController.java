@@ -7,14 +7,15 @@ import msuser.ingress.service.TagService;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
-@RequestMapping
-@RestController("/api")
+@RequestMapping("/api")
+@RestController
 public class TagController {
 
     private final TagService tagService;
 
-    @GetMapping("/debtor/initial/{applicationId}")
-    public void getTag(@PathVariable Long applicationId){
-        tagService.getTag(applicationId);
+    @GetMapping("/debtor/initial/{id}")
+    public GetTagDto getTag(@PathVariable Long id){
+        System.out.println(id);
+        return tagService.getTag(id);
     }
 }

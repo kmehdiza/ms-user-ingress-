@@ -3,17 +3,9 @@ databaseChangeLog:
       id: 20200818
       author: kmehdiza
       changes:
-        - createTable:
+        - insert:
             columns:
               - column:
-                  constraints:
-                    primaryKey: true
-                    primaryKeyName: tag_pkey
-                  name: id
-                  type: bigint
-              - column:
                   name: name
-                  type: varchar(50)
-                  constraints:
-                    - nullable: false
+                  value: "Facebook"
             tableName: tags

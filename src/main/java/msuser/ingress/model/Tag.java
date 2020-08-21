@@ -28,7 +28,7 @@ public class Tag {
     @NotEmpty
     private String name;
 
-    @JsonIgnore
-    private boolean deleted;
+//    @JsonIgnore
+//    private boolean deleted;
 
 }
