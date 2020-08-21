@@ -2,6 +2,7 @@ package msuser.ingress.service.impl;
 
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import msuser.ingress.dto.GetTagDto;
 import msuser.ingress.dto.PageDto;
 import msuser.ingress.exception.AlreadyExistException;
 import msuser.ingress.exception.NotFoundException;
@@ -19,6 +20,15 @@ import java.util.Optional;
 public class TagServiceImpl implements TagService {
 
     private final TagRepository tagRepository;
+
+    @Override
+    public GetTagDto getTag(Long id) {
+       Tag tag =  tagRepository.findById(id).orElseThrow(()->new NotFoundException("Id not found"+id));
+       return GetTagDto.builder()
+               .id(tag.getId())
+               .name(tag.getName())
+               .build();
+    }
 
     @Override
     public Tag findById(Long id) {

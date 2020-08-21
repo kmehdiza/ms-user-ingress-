@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20200818
+      author: kmehdiza
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: tag_pkey
+                  name: id
+                  type: bigint
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    - nullable: false
+            tableName: tags
